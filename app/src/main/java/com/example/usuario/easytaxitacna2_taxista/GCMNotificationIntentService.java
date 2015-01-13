@@ -67,12 +67,17 @@ public class GCMNotificationIntentService extends IntentService {
 			}
 		}
 
+        try{
+
         //Enviar intent con data a un broadcast
         Intent intentResponse = new Intent();
         intentResponse.setAction(ACTION_MyIntentService);
         intentResponse.addCategory(Intent.CATEGORY_DEFAULT);
         intentResponse.putExtra(EXTRA_KEY_OUT, extras.get(Config.MESSAGE_KEY).toString());
-        sendBroadcast(intentResponse);
+        sendBroadcast(intentResponse);}
+        catch (Exception e){
+
+        }
 
 		GcmBroadcastReceiver.completeWakefulIntent(intent);
 	}

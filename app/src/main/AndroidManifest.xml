@@ -52,16 +52,13 @@
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyD4GAmW8kc93PbIaSjfjAQQK72qWrHAIjE" />
+            android:value="AIzaSyBSc84R7khR3ox4hP4RiCc6cU2UcQToQpA" />
 
         <activity
             android:name=".MapActivity"
             android:label="@string/title_activity_map" >
         </activity>
-        <activity
-            android:name=".blankActivity"
-            android:label="@string/title_activity_blank" >
-        </activity>
+
     </application>
 
 </manifest>

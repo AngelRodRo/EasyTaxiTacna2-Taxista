@@ -56,6 +56,15 @@ public class MapActivity extends ActionBarActivity {
         getGoogleMap();
     }
 
+/*
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //un-register BroadcastReceiver
+        unregisterReceiver(myBroadcastReceiver);
+    }
+*/
+
     public void SendMessage(final String message){
 
 
@@ -81,7 +90,7 @@ public class MapActivity extends ActionBarActivity {
     public String SendServerMessage(String message){
 
         JSONArray values = new JSONArray();
-        values.put("taxista1");
+        values.put("cliente");
         //JSON PRINCIPAL (MENSAJE)
         JSONObject JsonMessage = new JSONObject();
 
@@ -174,7 +183,15 @@ public class MapActivity extends ActionBarActivity {
                     //Enviar localizacion del usuario como string compuesto de altitud y latitud
                     String message = Double.toString(latitude) + " "  +Double.toString(longitude) ;
                     Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-                    //SendMessage(message);
+
+                    try{
+                        Thread.sleep(3000);
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
+                    SendMessage(message);
                 }
             });
         }
